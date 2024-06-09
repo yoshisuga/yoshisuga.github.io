@@ -19,11 +19,11 @@
 # in the templates via {{ site.myvariable }}.
 
 domain: yoshisuga.github.io
-title: GenZD
+title: "GenZD"
 description: >- # this means to ignore newlines until "baseurl:"
-  An iOS port of GZDoom
+  iOS port of GZDoom
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yoshisuga.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: yoshisuga.github.io # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: y0sh1
 github_username:  yoshisuga
 
