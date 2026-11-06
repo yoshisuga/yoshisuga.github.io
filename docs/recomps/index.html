@@ -60,6 +60,9 @@ const games = [
   {name:"Doom II RPG", orig:"id Software / Fountainhead, 2005", kind:"Decomp port", platforms:["iOS"],
    desc:"Fork of the Doom II RPG reverse-engineering project, with in-progress iOS port work on the ios-port branch.",
    repo:"yoshisuga/DoomIIRPG-RE"},
+  {name:"Jedi Outcast / Jedi Academy (OpenJK)", orig:"Raven Software, 2002 / 2003", kind:"Source port", platforms:["iOS"],
+   desc:"iOS builds of Jedi Outcast (single player) and Jedi Academy on the OpenJK engine. Work lives on the OpenJK-iOS branch.",
+   repo:"yoshisuga/OpenJK", branch:"OpenJK-iOS"},
   {name:"Star Fox Enhanced", orig:"Nintendo, 1993", kind:"Source port", platforms:["iOS","Windows"],
    desc:"Native port of the UltraStarFox codebase at selectable frame rates up to 480 FPS.",
    repo:"yoshisuga/starfox-enhanced", tag:"2026.08.28"},
@@ -87,7 +90,7 @@ function render(){
       <p>${esc(g.desc)}</p>
       <div class="tags">${g.platforms.map(p => `<span class="tag">${esc(p)}</span>`).join("")}</div>
       <div class="links">
-        <a href="${gh}${g.repo}">Repository</a>
+        <a href="${gh}${g.repo}${g.branch?"/tree/"+g.branch:""}">Repository${g.branch?" ("+esc(g.branch)+")":""}</a>
         ${g.tag
           ? `<a href="${gh}${g.repo}/releases/tag/${encodeURIComponent(g.tag)}">Latest: ${esc(g.tag)}</a><a href="${gh}${g.repo}/releases">All releases</a>`
           : `<span class="none">No releases yet</span>`}
