@@ -18,6 +18,8 @@
   .filters button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
   .grid{display:grid;gap:12px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .pic{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;background:var(--tag)}
+  .pic.ph{display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:var(--tagfg);background:linear-gradient(135deg,var(--tag),var(--line))}
   .card h2{font-size:1.1rem;margin:0}
   .sub{color:var(--muted);font-size:.85rem;margin:2px 0 8px}
   .card p{margin:0 0 10px;font-size:.95rem}
@@ -44,19 +46,19 @@ const R = (repo, tag) => ({repo, tag});
 const games = [
   {name:"Portal 2", orig:"Valve, 2011", kind:"Recomp", platforms:["macOS","iPhone"],
    desc:"Portal 2's Linux x86 binaries statically recompiled to native ARM64. Playable on macOS and iPhone at 60 fps, with portals fired by tapping the back of the phone.",
-   repo:"yoshisuga/portal2-recomp"},
+   repo:"yoshisuga/portal2-recomp", img:"https://raw.githubusercontent.com/yoshisuga/portal2-recomp/main/docs/images/iphone-menu.jpg"},
   {name:"OutRunners", orig:"Sega, 1992 arcade", kind:"Decomp port", platforms:["iOS","New 3DS","PC","Switch"],
    desc:"Native port built on the verified C decompilation of the System Multi 32 arcade game, checked frame by frame against MAME.",
-   repo:"yoshisuga/outrunners-port", tag:"v1.1.1-ios-3ds"},
+   repo:"yoshisuga/outrunners-port", img:"https://raw.githubusercontent.com/yoshisuga/outrunners-port/main/docs/screenshots/title_menu.png", tag:"v1.1.1-ios-3ds"},
   {name:"Wing Commander", orig:"Origin, 1990", kind:"Decomp port", platforms:["iOS","3DS","Desktop"],
    desc:"Source reconstruction of Wing Commander (Kilrathi Saga) with an SDL2 port.",
-   repo:"yoshisuga/wc1-re"},
+   repo:"yoshisuga/wc1-re", img:"https://raw.githubusercontent.com/yoshisuga/wc1-re/main/screenshots/title-screen.png"},
   {name:"Star Wars: TIE Fighter (OpenTIE)", orig:"LucasArts, 1994", kind:"Reimplementation", platforms:["iOS","3DS"],
    desc:"Open reimplementation of TIE Fighter running the original game data natively.",
-   repo:"yoshisuga/OpenTIE", tag:"ios-v0.2.0"},
+   repo:"yoshisuga/OpenTIE", img:"https://raw.githubusercontent.com/yoshisuga/OpenTIE/main/assets/opentie-001.jpg", tag:"ios-v0.2.0"},
   {name:"Jedi Knight: Dark Forces II (OpenJKDF2)", orig:"LucasArts, 1997", kind:"Reimplementation", platforms:["iOS","iPadOS"],
    desc:"Function-by-function reimplementation in C, with an unofficial iPhone and iPad build and touch controls.",
-   repo:"yoshisuga/First-repo-for-Claude-for-JKDF2", tag:"ios-latest"},
+   repo:"yoshisuga/First-repo-for-Claude-for-JKDF2", img:"https://raw.githubusercontent.com/yoshisuga/First-repo-for-Claude-for-JKDF2/claude/openjkdf2-ios-build-2gcr9s/docs/images/screenshot.png", tag:"ios-latest"},
   {name:"Doom II RPG", orig:"id Software / Fountainhead, 2005", kind:"Decomp port", platforms:["iOS"],
    desc:"Fork of the Doom II RPG reverse-engineering project, with in-progress iOS port work on the ios-port branch.",
    repo:"yoshisuga/DoomIIRPG-RE"},
@@ -68,7 +70,7 @@ const games = [
    repo:"yoshisuga/starfox-enhanced", tag:"2026.08.28"},
   {name:"Switch games via nxnative", orig:"Nintendo Switch", kind:"Native port", platforms:["iPhone","iPad","Mac"],
    desc:"Not an emulator: a Switch game's own code runs on the Apple chip with an HLE host and NVN to Metal. Turns your NSP files into a sideloadable IPA.",
-   repo:"yoshisuga/nxnative"},
+   repo:"yoshisuga/nxnative", img:"https://raw.githubusercontent.com/yoshisuga/nxnative/main/docs/images/dragon-quest-xi-s.jpg"},
   {name:"Flycast", orig:"Sega Dreamcast", kind:"Emulator port", platforms:["iOS 26"],
    desc:"Flycast for iOS 26 with StikDebug support.",
    repo:"yoshisuga/Flycast-iOS", tag:"v1.0-20260823"}
@@ -85,6 +87,7 @@ function render(){
   filters.innerHTML = kinds.map(k => `<button aria-pressed="${k===active}" data-k="${esc(k)}">${esc(k)}</button>`).join("");
   grid.innerHTML = games.filter(g => active==="All" || g.kind===active).map(g => `
     <article class="card">
+      ${g.img?`<img class="pic" loading="lazy" src="${g.img}" alt="${esc(g.name)} screenshot">`:`<div class="pic ph" aria-hidden="true">${esc(g.name.trim()[0])}</div>`}
       <h2>${esc(g.name)}</h2>
       <div class="sub">${esc(g.orig)} · ${esc(g.kind)}</div>
       <p>${esc(g.desc)}</p>
