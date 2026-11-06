@@ -71,14 +71,15 @@ const games = [
   {name:"Star Fox Enhanced", orig:"Nintendo, 1993", kind:"Source port", platforms:["iOS","Windows"],
    desc:"Native port of the UltraStarFox codebase at selectable frame rates up to 480 FPS.",
    repo:"yoshisuga/starfox-enhanced", tag:"2026.08.28"},
-  {name:"Switch games via nxnative", orig:"Nintendo Switch", kind:"Native port", platforms:["iPhone","iPad","Mac"],
+  {name:"Switch games via nxnative", orig:"Nintendo Switch, 2017", kind:"Native port", platforms:["iPhone","iPad","Mac"],
    desc:"Not an emulator: a Switch game's own code runs on the Apple chip with an HLE host and NVN to Metal. Turns your NSP files into a sideloadable IPA.",
    repo:"yoshisuga/nxnative", img:"https://raw.githubusercontent.com/yoshisuga/nxnative/main/docs/images/dragon-quest-xi-s.jpg"},
-  {name:"Flycast", orig:"Sega Dreamcast", kind:"Emulator port", platforms:["iOS 26"],
+  {name:"Flycast", orig:"Sega Dreamcast, 1998", kind:"Emulator port", platforms:["iOS 26"],
    desc:"Flycast for iOS 26 with StikDebug support.",
    repo:"yoshisuga/Flycast-iOS", tag:"v1.0-20260823"}
 ];
 
+games.sort((a,b) => +a.orig.match(/\d{4}/)[0] - +b.orig.match(/\d{4}/)[0]);
 const gh = "https://github.com/";
 const kinds = ["All", ...new Set(games.map(g => g.kind))];
 const filters = document.getElementById("filters"), grid = document.getElementById("grid");
