@@ -2,26 +2,28 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GenJ2 Support</title>
 <meta name="description" content="Help, answers to common questions and contact for GenJ2, a J2ME and iAppli emulator for iPhone and iPad.">
+<link rel="alternate" hreflang="en" href="https://yoshisuga.github.io/genj2/"><link rel="alternate" hreflang="ja" href="https://yoshisuga.github.io/genj2/ja/"><link rel="alternate" hreflang="ko" href="https://yoshisuga.github.io/genj2/ko/"><link rel="alternate" hreflang="zh-Hans" href="https://yoshisuga.github.io/genj2/zh-Hans/"><link rel="alternate" hreflang="zh-Hant" href="https://yoshisuga.github.io/genj2/zh-Hant/"><link rel="alternate" hreflang="es" href="https://yoshisuga.github.io/genj2/es/"><link rel="alternate" hreflang="de" href="https://yoshisuga.github.io/genj2/de/"><link rel="alternate" hreflang="fr" href="https://yoshisuga.github.io/genj2/fr/"><link rel="alternate" hreflang="it" href="https://yoshisuga.github.io/genj2/it/"><link rel="alternate" hreflang="pt-BR" href="https://yoshisuga.github.io/genj2/pt-BR/"><link rel="alternate" hreflang="pt-PT" href="https://yoshisuga.github.io/genj2/pt-PT/">
 <style>
 :root{--bg:#fff;--fg:#1c1c1e;--mute:#6b6b70;--line:#e3e3e8;--link:#0a64d8;--card:#f5f5f7}
 @media(prefers-color-scheme:dark){:root{--bg:#111113;--fg:#f2f2f4;--mute:#9a9aa1;--line:#2c2c30;--link:#5aa2ff;--card:#1b1b1e}}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","PingFang SC","Noto Sans CJK",Roboto,sans-serif}
 main{max-width:720px;margin:0 auto;padding:32px 20px 64px}
 h1{font-size:2rem;margin:0 0 4px}h2{font-size:1.25rem;margin:36px 0 8px;padding-top:20px;border-top:1px solid var(--line)}
 p,li{margin:8px 0}a{color:var(--link)}.sub{color:var(--mute);margin:0 0 24px}
 .card{background:var(--card);border-radius:12px;padding:4px 18px;margin:16px 0}
-nav{font-size:.95rem;margin-bottom:28px}nav a{margin-right:16px}
+nav{font-size:.95rem;margin-bottom:12px}nav a{margin-right:16px}
+.langs{font-size:.85rem;color:var(--mute);margin-bottom:24px;line-height:2}.langs a{margin-right:10px;white-space:nowrap}
 small,.mute{color:var(--mute)}
 </style></head><body><main>
 <nav><a href="/genj2/">Support</a><a href="/genj2/privacy/">Privacy Policy</a></nav>
+<div class="langs"><b>English</b> <a href="/genj2/ja/" hreflang="ja">日本語</a> <a href="/genj2/ko/" hreflang="ko">한국어</a> <a href="/genj2/zh-Hans/" hreflang="zh-Hans">简体中文</a> <a href="/genj2/zh-Hant/" hreflang="zh-Hant">繁體中文</a> <a href="/genj2/es/" hreflang="es">Español</a> <a href="/genj2/de/" hreflang="de">Deutsch</a> <a href="/genj2/fr/" hreflang="fr">Français</a> <a href="/genj2/it/" hreflang="it">Italiano</a> <a href="/genj2/pt-BR/" hreflang="pt-BR">Português (Brasil)</a> <a href="/genj2/pt-PT/" hreflang="pt-PT">Português (Portugal)</a></div>
 
 <h1>GenJ2</h1>
 <p class="sub">J2ME &amp; iAppli Emulator for iPhone and iPad</p>
 
 <p>GenJ2 plays J2ME (Java ME) games and Japanese iAppli (DoJa) applications on your iPhone or iPad. It comes with four original games so you can try it right away, and you can import your own .jar files.</p>
 
-<div class="card"><p><b>Need help or found a bug?</b><br>
-Ask on <a href="https://discord.gg/S4tVTNEmsj">Discord</a> or open an issue on <a href="https://github.com/yoshisuga/j2me-funkey-rgnano/issues">GitHub</a>. Please include your device, iOS version, the app version and the name of the game.</p></div>
+<div class="card"><p><b>Need help or found a bug?</b><br>Ask on <a href="https://discord.gg/S4tVTNEmsj">Discord</a> or open an issue on <a href="https://github.com/yoshisuga/j2me-funkey-rgnano/issues">GitHub</a>. Please include your device, iOS version, the app version and the name of the game.</p></div>
 
 <h2>Getting started</h2>
 <ul>
@@ -32,32 +34,15 @@ Ask on <a href="https://discord.gg/S4tVTNEmsj">Discord</a> or open an issue on <
 
 <h2>Frequently asked questions</h2>
 
-<p><b>Where do I get games?</b><br>
-GenJ2 does not include or download any third-party games. Import files you have the right to use.</p>
-
-<p><b>A game doesn't start, or looks or sounds wrong.</b><br>
-Open the game's settings and try a different screen size, scaling or frame rate. For iAppli games make sure the .jam file (and .sp file, if any) was imported with the .jar. If it still fails, tell us the name of the game on Discord or GitHub.</p>
-
-<p><b>The soft keys or arrows don't work in a game.</b><br>
-Games from different phone makers expect different key codes. In the game's settings change <i>Soft key codes</i> (Standard, Motorola, Siemens) or turn on <i>Arrows send 8 / 4 / 6 / 2</i>.</p>
-
-<p><b>What are save states?</b><br>
-Save and restore a game at any moment from the &bull;&bull;&bull; menu. Every game has one free save slot. GenJ2 Premium unlocks 10 slots per game and autosave when you leave the app.</p>
-
-<p><b>What does Premium include?</b><br>
-A one-time purchase (no subscription): 10 save slots for every game, autosave, and more phone colors and finishes. All games and settings are free.</p>
-
-<p><b>How do I restore my purchase?</b><br>
-Settings &rarr; Premium &rarr; Restore Purchases, signed in with the Apple ID you used to buy it. It also works on your other devices.</p>
-
-<p><b>How do I get the retro phone look?</b><br>
-In a game, open &bull;&bull;&bull; &rarr; Phone skin (or Settings &rarr; Controls) to choose the candy-bar or flip phone, a color, stretched or normal proportions, and the metallic sheen.</p>
-
-<p><b>Does it work on iPhone Duo?</b><br>
-Yes: folded with the game on one screen and controls on the other, folded in portrait, full-screen landscape and the outer screen.</p>
-
-<p><b>Does GenJ2 need an internet connection?</b><br>
-No. See the <a href="/genj2/privacy/">Privacy Policy</a>.</p>
+<p><b>Where do I get games?</b><br>GenJ2 does not include or download any third-party games. Import files you have the right to use.</p>
+<p><b>A game doesn't start, or looks or sounds wrong.</b><br>Open the game's settings and try a different screen size, scaling or frame rate. For iAppli games make sure the .jam file (and .sp file, if any) was imported with the .jar. If it still fails, tell us the name of the game on Discord or GitHub.</p>
+<p><b>The soft keys or arrows don't work in a game.</b><br>Games from different phone makers expect different key codes. In the game's settings change <i>Soft key codes</i> (Standard, Motorola, Siemens) or turn on <i>Arrows send 8 / 4 / 6 / 2</i>.</p>
+<p><b>What are save states?</b><br>Save and restore a game at any moment from the &bull;&bull;&bull; menu. Every game has one free save slot. GenJ2 Premium unlocks 10 slots per game and autosave when you leave the app.</p>
+<p><b>What does Premium include?</b><br>A one-time purchase (no subscription): 10 save slots for every game, autosave, and more phone colors and finishes. All games and settings are free.</p>
+<p><b>How do I restore my purchase?</b><br>Settings &rarr; Premium &rarr; Restore Purchases, signed in with the Apple ID you used to buy it. It also works on your other devices.</p>
+<p><b>How do I get the retro phone look?</b><br>In a game, open &bull;&bull;&bull; &rarr; Phone skin (or Settings &rarr; Controls) to choose the candy-bar or flip phone, a color, stretched or normal proportions, and the metallic sheen.</p>
+<p><b>Does it work on iPhone Duo?</b><br>Yes: folded with the game on one screen and controls on the other, folded in portrait, full-screen landscape and the outer screen.</p>
+<p><b>Does GenJ2 need an internet connection?</b><br>No. See the <a href="/genj2/privacy/">Privacy Policy</a>.</p>
 
 <h2>About</h2>
 <p>GenJ2 is an independent project built on the open source <a href="https://github.com/yoshisuga/j2me-funkey-rgnano">phoneME-based emulator</a>. Its licenses are listed in Settings &rarr; Acknowledgements.</p>
